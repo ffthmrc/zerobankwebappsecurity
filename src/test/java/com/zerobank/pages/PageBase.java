@@ -1,6 +1,7 @@
 package com.zerobank.pages;
 
 import com.zerobank.utulities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -38,7 +39,9 @@ public class PageBase {
     @FindBy(id = "Online Statements")
     public WebElement onlineStatement;
 
-
+public void navigateTo(String Tab){
+    Driver.get().findElement(By.xpath("//a[text()='"+Tab+"']")).click();
+}
 
 
     public PageBase() {
